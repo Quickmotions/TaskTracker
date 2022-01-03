@@ -28,7 +28,7 @@ class Tasks:
         self.load_tasks()
 
     def load_tasks(self):
-        with open('tasks.data') as f:
+        with open('../tasks.data') as f:
             for line in f.readlines():
                 self.tasks.append(line.strip())
 
