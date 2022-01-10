@@ -1,6 +1,6 @@
 from datetime import datetime
 import random
-from loadCommands import Commands
+from program.loadCommands import Commands
 
 
 class User:

@@ -1,4 +1,4 @@
-from abstract import User
+from program.abstract import User
 
 commands_root = {
     'tl': 'Team List',  # shows all members in all groups
