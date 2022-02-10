@@ -1,7 +1,6 @@
-from program.teamHandling import Team
-from program.userHandling import User
-from program.commandHandling import use_command
-
+from src.commands import use_command
+from src.team import Team
+from src.user import User
 
 # load teams
 teams = []
@@ -37,12 +36,7 @@ while True:
             logged_in(user=current_user)
 
     if choice.lower() == "r":
-
         current_user = User(name=input("Full Name: "), perm_lvl=0)
         current_team = Team(team_name=input("Team Name: "))
         current_team.users[current_user.id] = current_user
         teams.append(current_team)
-
-
-
-

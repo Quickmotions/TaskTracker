@@ -1,6 +1,7 @@
-from datetime import datetime
 import random
-from program.abstract import User
+from datetime import datetime
+
+from src.abstract import User
 
 date = datetime.now().date()
 

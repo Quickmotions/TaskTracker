@@ -1,13 +1,12 @@
 import sys
-from functools import partial
-
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QWidget
+from functools import partial
 
 
 class TrackerUI(QMainWindow):
@@ -28,7 +27,7 @@ class Tasks:
         self.load_tasks()
 
     def load_tasks(self):
-        with open('../tasks.data') as f:
+        with open('tasks.data') as f:
             for line in f.readlines():
                 self.tasks.append(line.strip())
 

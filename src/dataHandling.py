@@ -1,6 +1,7 @@
 # 29/12/2021 DataHandling
 from dataclasses import dataclass
-from program.userHandling import User
+
+from src.user import User
 
 
 class DataHandler:
