@@ -9,6 +9,7 @@ current_team = None
 
 
 def login(teams: list[Team], username: str, password: str):
+    """Begins Login Process for user"""
     for team in teams:
         for _, user in team.users.items():
             if user.username.lower() == username.lower() and user.password == password:
@@ -18,6 +19,7 @@ def login(teams: list[Team], username: str, password: str):
 
 
 def logged_in(user):
+    """"""
     print(f"------------{current_user.username}------------")
     while True:
         try:
@@ -34,9 +36,11 @@ while True:
 
         if current_user is not None:
             logged_in(user=current_user)
+            print("DEBUG: Logged in a user")
 
     if choice.lower() == "r":
         current_user = User(name=input("Full Name: "), perm_lvl=0)
         current_team = Team(team_name=input("Team Name: "))
         current_team.users[current_user.id] = current_user
         teams.append(current_team)
+        print("DEBUG: registered a new team")

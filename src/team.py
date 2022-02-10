@@ -1,7 +1,7 @@
 import random
 from datetime import datetime
 
-from src.abstract import User
+from src.abstractBC import User
 
 date = datetime.now().date()
 

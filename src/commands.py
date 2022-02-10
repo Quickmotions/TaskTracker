@@ -1,5 +1,4 @@
-from src.abstract import Team
-from src.user import User
+from src.abstractBC import Team, User
 
 commands_root = {
     'tl': 'Team List',  # shows all members in all groups

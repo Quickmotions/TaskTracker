@@ -15,3 +15,4 @@ class User:
         self.id = self.username + self.password + date.strftime("%Y") + str(random.randint(1, 9999))
         self.commands = Commands(self)
         self.current_group = None
+        print("DEBUG: Created New User")

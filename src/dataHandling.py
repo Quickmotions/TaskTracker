@@ -1,8 +1,5 @@
 # 29/12/2021 DataHandling
-from dataclasses import dataclass
-
-from src.user import User
-
+from abstractBC import Team
 
 class DataHandler:
 
