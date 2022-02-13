@@ -1,35 +1,36 @@
 from src.abstractBC import Team, User
+import src.commands_list
 
 commands_root = {
-    'tl': 'Team List',  # shows all members in all groups
-    'cg': 'Create Group',  # create a team in your team
-    'rg': 'Remove Group',  # remove a group from your team
-    'gl': 'Group List',  # shows all groups in team
-    'eg': 'Edit Group',  # select a group to edit
+    'tl': commands_list.TeamList,  # shows all members in all groups
+    'cg': commands_list.CreateGroup,  # create a team in your team
+    'rg': commands_list.RemoveGroup, # remove a group from your team
+    'gl': commands_list.GroupList, # show all groups in team
+    'eg': commands_list.EditGroup, # select a group to edit
 
 }
 commands_lead = {
-    'rm': 'Remove Member',  # remove a member from your group
-    'cm': 'Create Member',  # create a member in your current group
-    'mm': 'Move Member',  # move a member into a group
+    'rm': commands_list.RemoveMember, # remove a member from your group
+    'cm': commands_list.CreateMember, # create a member in your current group
+    'mm': commands_list.MoveMember, # move a member into a group
 }
 
 commands_user = {
-    'h': 'Help',  # shows all commands user has access too
-    'v': 'View',  # shows dashboard which shows important data
-    'l': 'List',  # shows members in your current group
-    'i': 'Info',  # view details about yourself or another user
+    'h': commands_list.Help,  # shows all commands_list user has access too
+    'v': commands_list.View,  # shows dashboard which shows important data
+    'l': commands_list.List,  # shows members in your current group
+    'i': commands_list.Info,  # view details about yourself or another user
 
 }
 
 command_desc = {
-    'Team List': "shows all members in all groups",
-    'Create Group': "create a team in your team",
+    'tl': "shows all members in all groups",
+    'cg': "create a team in your team",
     'Remove Group': "remove a group from your team",
     'Group List': "shows all groups in team",
     'Remove Member': "remove a member from your group",
     'Create Member': "create a member in your current group",
-    'Help': "shows all commands user has access too",
+    'Help': "shows all commands_list user has access too",
     'View': "shows dashboard which shows important data",
     'List': "shows members in your current group",
     'Info': "view details about yourself or another user",
@@ -67,5 +68,13 @@ def list_commands(user: User) -> str:
 
 def process(command: str, team: Team, user: User, args: list[str]):
     """EMPTY WORK IN PROGRESS"""
-    pass
+    if command in commands_root or command in commands_user or command in commands_lead:
+        if command in user.commands:
+            process = user.commands[command]
+            process()
+        else:
+            print("Invalid Permission")
+    else:
+        print("Invalid Command")
+
 
